@@ -146,4 +146,3 @@ feed_characters <- NULL
 # Read carfeed.csv into a new data frame called carfeed
 carfeed <- read.csv("carfeed.csv", header = TRUE, sep = ",")
 
-print(3 * 3)
