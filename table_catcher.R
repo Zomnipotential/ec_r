@@ -1,16 +1,16 @@
 # import csv file into a for R suitable datastructure
 install.packages("jsonlite")
-install.packages('jsonlite', repos='http://cran.us.r-project.org')
+install.packages("jsonlite", repos = "http://cran.us.r-project.org")
 # which R gives /usr/local/bin/R
 # defaults write org.R-project.R r.rpath.mac /usr/local/bin/R
 # The downloaded binary packages are in
 # /var/folders/1s/vk0n_73d4ndcz49qcnxf6wf40000gp/T//RtmpBPa30s/downloaded_packages
 
 # Load the data
-data <- read.csv("2404111718_Cars.csv", header = TRUE, sep = ",")
+data <- read.csv("2404152328_Cars.csv", header = TRUE, sep = ",")
 
 # Remove everything in columns 11 and onwards
-feed <- data[,1:10]
+feed <- data[, 1:10]
 
 # Print the feed
 print(feed)
@@ -37,13 +37,13 @@ print(column_types)
 #print(dim(all_integers))
 
 # For each of the columns 3, 6 - 9 of feed, remove the leading, middle, and trailing whitespaces
-feed[, c(3, 6:9)] <- sapply(feed[,c(3, 6:9)], function(x) gsub("^\\s+|\\s+$", "", x))
+feed[, c(3, 6:9)] <- sapply(feed[, c(3, 6:9)], function(x) gsub("^\\s+|\\s+$", "", x))
 
 # Convert all characters in the columns 3, 6 - 9 of feed to small letters
 feed[, c(3, 6:9)] <- sapply(feed[, c(3, 6:9)], function(x) tolower(x))
 
 # Remove the square brackets from the cells of the column 6 of feed
-feed[, 6] <- gsub("\\[|\\]", "", feed[,6])
+feed[, 6] <- gsub("\\[|\\]", "", feed[, 6])
 
 # Convert the first column of feed to integers
 feed[, 1] <- as.integer(feed[, 1])
@@ -146,3 +146,8 @@ feed_characters <- NULL
 # Read carfeed.csv into a new data frame called carfeed
 carfeed <- read.csv("carfeed.csv", header = TRUE, sep = ",")
 
+# Print the first 6 rows of carfeed
+print(head(carfeed))
+
+x_tra <- 5
+print(x_tra)
