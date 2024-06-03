@@ -132,10 +132,6 @@ print(table(feed_integers[, 3])) # Drivning
 print(table(feed_integers[, 4])) # Hästkrafter
 print(table(feed_integers[, 5])) # Pris
 
-
-
-
-
 # Empty all variables from the workspace
 data <- NULL
 feed <- NULL
@@ -146,3 +142,8 @@ unique_values <- NULL
 missing_values <- NULL
 feed_integers <- NULL
 feed_characters <- NULL
+
+# Read carfeed.csv into a new data frame called carfeed
+carfeed <- read.csv("carfeed.csv", header = TRUE, sep = ",")
+
+print(3 * 3)
