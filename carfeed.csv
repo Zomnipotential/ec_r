@@ -1,23 +1,23 @@
 "","Miltal","Modellår","Biltyp","Drivning","Hästkrafter","Färg","Märke","Modell","Län","Pris..Y."
 "1",1491,2022,"halvkombi",2,204,"grå","hyundai","kona","kronoberg",349800
-"2",9800,2019,"sedan",2,120,"svart","hyundai","ioniq","göteborg",144000
+"2",9800,2019,"sedan",2,120,"svart","hyundai","ioniq","västra götaland",144000
 "3",6729,2020,"suv",4,408,"svart","audi","e-tron","skåne",528900
 "4",1270,2022,"suv",2,136,"röd","hyundai","kona","uppsala",259900
 "5",11748,2020,"halvkombi",2,136,"blå","hyundai","ioniq","örebro",209800
-"6",4355,2020,"suv",4,408,"svart","audi","e-tron","malmö",548900
+"6",4355,2020,"suv",4,408,"svart","audi","e-tron","skåne",548900
 "7",6400,2022,"suv",2,204,"blå","hyundai","kona","örebro",319800
 "8",7400,2020,"suv",2,204,"grå","hyundai","kona","örebro",274800
 "9",4998,2020,"suv",2,204,"grå","hyundai","kona","örebro",289800
 "10",3525,2020,"suv",2,204,"röd","hyundai","kona","örebro",289800
-"11",3990,2023,"sedan",4,476,"svart","audi","e-tron","karlskrona",867000
-"12",9975,2019,"suv",2,204,"mörkgrå","hyundai","kona","karlskrona",237000
-"13",4045,2022,"suv",4,300,"grå","audi","q4","vimmerby",549900
-"14",5100,2021,"sedan",2,218,"grå","hyundai","ioniq","skövde",459900
-"15",9100,2022,"suv",2,218,"svart","hyundai","ioniq","värnamo",419900
+"11",3990,2023,"sedan",4,476,"svart","audi","e-tron","blekinge",867000
+"12",9975,2019,"suv",2,204,"mörkgrå","hyundai","kona","blekinge",237000
+"13",4045,2022,"suv",4,300,"grå","audi","q4","kalmar",549900
+"14",5100,2021,"sedan",2,218,"grå","hyundai","ioniq","västra götaland",459900
+"15",9100,2022,"suv",2,218,"svart","hyundai","ioniq","jönköping",419900
 "16",4073,2021,"suv",4,408,"grå","audi","e-tron","stockholm",534900
-"17",4277,2022,"suv",2,204,"blå","audi","q4","järfälla",478900
-"18",10500,2019,"suv",4,408,"svart","audi","e-tron","malmö",409800
-"19",3520,2021,"suv",4,504,"svart","audi","e-tron","göteborg",719800
+"17",4277,2022,"suv",2,204,"blå","audi","q4","stockholm",478900
+"18",10500,2019,"suv",4,408,"svart","audi","e-tron","skåne",409800
+"19",3520,2021,"suv",4,504,"svart","audi","e-tron","västra götaland",719800
 "20",9162,2019,"suv",4,408,"svart","audi","e-tron","stockholm",425900
 "21",3977,2022,"suv",4,408,"grå","audi","e-tron","stockholm",626900
 "22",3411,2022,"suv",2,204,"brun","hyundai","kona","stockholm",343900
@@ -40,8 +40,8 @@
 "39",7367,2022,"suv",4,408,"grå","audi","e-tron","stockholm",583900
 "40",2998,2023,"suv",2,204,"grå","audi","q4","stockholm",474900
 "41",4373,2021,"suv",4,504,"silver","audi","e-tron","stockholm",692900
-"42",1950,2022,"suv",2,204,"svart","hyundai","kona","vimmerby",379900
-"43",4232,2020,"halvkombi",2,136,"röd","hyundai","ioniq","österåker",200000
+"42",1950,2022,"suv",2,204,"svart","hyundai","kona","kalmar",379900
+"43",4232,2020,"halvkombi",2,136,"röd","hyundai","ioniq","stockholm",200000
 "44",8826,2020,"suv",4,408,"grå","audi","e-tron","stockholm",479900
 "45",4000,2019,"halvkombi",2,120,"grå","hyundai","ioniq","örebro",199800
 "46",4200,2021,"halvkombi",2,150,"svart","nissan","leaf","skåne",189000
@@ -84,66 +84,66 @@
 "83",2027,2020,"halvkombi",2,150,"röd","nissan","leaf","skåne",199900
 "84",567,2023,"suv",2,221,"mörkgrön","nissan","ariya","västerbotten",499900
 "85",5310,2020,"halvkombi",2,218,"vit","nissan","leaf","jönköping",254900
-"86",2955,2022,"halvkombi",2,150,"vit","nissan","leaf","nordvästra södermanland",209000
+"86",2955,2022,"halvkombi",2,150,"vit","nissan","leaf","södermanland",209000
 "87",2078,2023,"suv",2,243,"svart","nissan","ariya","stockholm",499900
 "88",3440,2021,"halvkombi",2,150,"röd","nissan","leaf","dalarna",209900
 "89",700,2023,"suv",2,243,"ljusgrå","nissan","ariya","kalmar",599900
 "90",950,2023,"suv",2,243,"blå","nissan","ariya","jönköping",579800
-"91",4990,2020,"suv",4,313,"grå","audi","e-tron","linköping",415900
+"91",4990,2020,"suv",4,313,"grå","audi","e-tron","östergötland",415900
 "92",9208,2020,"suv",4,313,"svart","audi","e-tron","stockholm",354900
 "93",5326,2022,"suv",4,408,"silver","audi","e-tron","stockholm",594900
-"94",3438,2020,"suv",4,408,"blå","audi","e-tron","göteborg",589800
-"95",4937,2020,"suv",4,313,"svart","audi","e-tron","göteborg",399800
+"94",3438,2020,"suv",4,408,"blå","audi","e-tron","västra götaland",589800
+"95",4937,2020,"suv",4,313,"svart","audi","e-tron","västra götaland",399800
 "96",500,2023,"sedan",2,325,"röd","hyundai","ioniq","jönköping",589900
 "97",900,2023,"sedan",4,325,"grå","hyundai","ioniq","jönköping",609900
 "98",7200,2019,"halvkombi",2,204,"orange","hyundai","kona","jönköping",259900
-"99",7213,2018,"halvkombi",2,120,"mörkblå","hyundai","ioniq","knivsta",169400
-"100",2133,2021,"halvkombi",2,204,"vit","hyundai","kona","växjö",329800
+"99",7213,2018,"halvkombi",2,120,"mörkblå","hyundai","ioniq","uppsala",169400
+"100",2133,2021,"halvkombi",2,204,"vit","hyundai","kona","kronoberg",329800
 "101",8649,2017,"halvkombi",2,120,"silver","hyundai","ioniq","stockholm",177900
-"102",2952,2019,"halvkombi",2,120,"silver","hyundai","ioniq","trollhättan",184000
+"102",2952,2019,"halvkombi",2,120,"silver","hyundai","ioniq","västra götaland",184000
 "103",2070,2021,"halvkombi",2,204,"röd","hyundai","kona","kalmar",334900
-"104",6900,2020,"suv",2,204,"vit","hyundai","kona","värnamo",269900
-"105",4500,2020,"suv",4,313,"svart","audi","e-tron","skövde",439000
-"106",8897,2022,"suv",2,218,"vit","hyundai","ioniq","växjö",419900
-"107",1554,2023,"suv",2,204,"grå","audi","q4","hörby",549000
+"104",6900,2020,"suv",2,204,"vit","hyundai","kona","jönköping",269900
+"105",4500,2020,"suv",4,313,"svart","audi","e-tron","västra götaland",439000
+"106",8897,2022,"suv",2,218,"vit","hyundai","ioniq","kronoberg",419900
+"107",1554,2023,"suv",2,204,"grå","audi","q4","skåne",549000
 "108",4000,2021,"halvkombi",2,218,"grå","hyundai","ioniq","jönköping",459800
-"109",1700,2023,"sedan",4,325,"vit","hyundai","ioniq","nässjö",599900
-"110",588,2023,"suv",2,229,"grön","hyundai","ioniq","kungälv",549900
-"111",5937,2020,"halvkombi",2,136,"grå","hyundai","ioniq","norrköping",229000
+"109",1700,2023,"sedan",4,325,"vit","hyundai","ioniq","jönköping",599900
+"110",588,2023,"suv",2,229,"grön","hyundai","ioniq","västra götaland",549900
+"111",5937,2020,"halvkombi",2,136,"grå","hyundai","ioniq","östergötland",229000
 "112",1600,2023,"sedan",4,325,"blå","hyundai","ioniq","örebro",609900
 "113",1600,2023,"sedan",4,325,"blå","hyundai","ioniq","örebro",599900
 "114",1900,2023,"suv",4,325,"grå","hyundai","ioniq","örebro",548900
-"115",700,2024,"suv",2,218,"grå","hyundai","kona","nässjö",595200
-"116",1000,2023,"sedan",4,325,"svart","hyundai","ioniq","nässjö",660700
-"117",2600,2019,"halvkombi",2,120,"vit","hyundai","ioniq","karlskrona",219900
-"118",2600,2021,"suv",4,408,"röd","audi","e-tron","tranemo",619000
-"119",5656,2019,"halvkombi",2,120,"blå","hyundai","ioniq","lund",184500
-"120",10283,2020,"halvkombi",2,138,"vit","hyundai","ioniq","lidköping",219900
-"121",10895,2021,"suv",4,408,"svart","audi","e-tron","karlstad",439500
-"122",500,2023,"sedan",2,325,"svart","hyundai","ioniq","värnamo",639800
-"123",800,2024,"suv",2,218,"grå","hyundai","kona","vimmerby",569900
-"124",1400,2023,"suv",4,300,"svart","audi","q4","borås",605000
-"125",2990,2023,"sedan",4,325,"grå","hyundai","ioniq","skövde",634900
-"126",600,2023,"halvkombi",4,325,"grå","hyundai","ioniq","skövde",619900
-"127",3730,2020,"suv",4,408,"svart","audi","e-tron","karlstad",459500
-"128",600,2024,"sedan",4,325,"blå","hyundai","ioniq","vimmerby",639800
+"115",700,2024,"suv",2,218,"grå","hyundai","kona","jönköping",595200
+"116",1000,2023,"sedan",4,325,"svart","hyundai","ioniq","jönköping",660700
+"117",2600,2019,"halvkombi",2,120,"vit","hyundai","ioniq","blekinge",219900
+"118",2600,2021,"suv",4,408,"röd","audi","e-tron","västra götaland",619000
+"119",5656,2019,"halvkombi",2,120,"blå","hyundai","ioniq","skåne",184500
+"120",10283,2020,"halvkombi",2,138,"vit","hyundai","ioniq","västra götaland",219900
+"121",10895,2021,"suv",4,408,"svart","audi","e-tron","värmland",439500
+"122",500,2023,"sedan",2,325,"svart","hyundai","ioniq","jönköping",639800
+"123",800,2024,"suv",2,218,"grå","hyundai","kona","kalmar",569900
+"124",1400,2023,"suv",4,300,"svart","audi","q4","västra götaland",605000
+"125",2990,2023,"sedan",4,325,"grå","hyundai","ioniq","västra götaland",634900
+"126",600,2023,"halvkombi",4,325,"grå","hyundai","ioniq","västra götaland",619900
+"127",3730,2020,"suv",4,408,"svart","audi","e-tron","värmland",459500
+"128",600,2024,"sedan",4,325,"blå","hyundai","ioniq","kalmar",639800
 "129",1000,2023,"sedan",4,325,"vit","hyundai","ioniq","kalmar",599900
-"130",1350,2023,"sedan",4,325,"blå","hyundai","ioniq","vetlanda",599900
-"131",500,2024,"suv",2,218,"grå","hyundai","kona","växjö",595200
+"130",1350,2023,"sedan",4,325,"blå","hyundai","ioniq","jönköping",599900
+"131",500,2024,"suv",2,218,"grå","hyundai","kona","kronoberg",595200
 "132",1290,2023,"sedan",4,325,"vit","hyundai","ioniq","jönköping",609900
-"133",9900,2020,"suv",2,204,"vit","hyundai","kona","skövde",259900
-"134",800,2024,"suv",2,218,"vit","hyundai","kona","skövde",549900
-"135",1500,2023,"sedan",4,325,"blå","hyundai","ioniq","skövde",599900
-"136",800,2023,"suv",2,325,"gul","hyundai","ioniq","karlskrona",639800
-"137",600,2023,"halvkombi",4,325,"grå","hyundai","ioniq","växjö",599900
-"138",850,2023,"sedan",4,325,"blå","hyundai","ioniq","karlskrona",599900
-"139",3000,2020,"halvkombi",2,120,"vit","hyundai","ioniq","kristianstad",229900
+"133",9900,2020,"suv",2,204,"vit","hyundai","kona","västra götaland",259900
+"134",800,2024,"suv",2,218,"vit","hyundai","kona","västra götaland",549900
+"135",1500,2023,"sedan",4,325,"blå","hyundai","ioniq","västra götaland",599900
+"136",800,2023,"suv",2,325,"gul","hyundai","ioniq","blekinge",639800
+"137",600,2023,"halvkombi",4,325,"grå","hyundai","ioniq","kronoberg",599900
+"138",850,2023,"sedan",4,325,"blå","hyundai","ioniq","blekinge",599900
+"139",3000,2020,"halvkombi",2,120,"vit","hyundai","ioniq","skåne",229900
 "140",3683,2022,"suv",4,300,"mörkgrå","volkswagen","id.4","stockholm",457900
 "141",4423,2021,"suv",2,204,"vit","volkswagen","id.4","stockholm",390900
 "142",2350,2021,"suv",2,204,"mörkgrå","volkswagen","id.4","skåne",449900
 "143",2207,2022,"suv",4,300,"mörkgrå","volkswagen","id.4","stockholm",494900
 "144",2789,2016,"halvkombi",2,82,"vit","volkswagen","e-up!","västerbotten",129900
-"145",7700,2015,"halvkombi",2,82,"silver","volkswagen","e-up!","göteborg",89000
+"145",7700,2015,"halvkombi",2,82,"silver","volkswagen","e-up!","västra götaland",89000
 "146",4478,2020,"halvkombi",2,83,"gul","volkswagen","e-up!","stockholm",153900
 "147",9471,2020,"halvkombi",2,83,"vit","volkswagen","e-up!","stockholm",144900
 "148",3438,2022,"suv",4,300,"vit","volkswagen","id.4","stockholm",449900
@@ -159,7 +159,7 @@
 "158",2969,2021,"suv",2,170,"grå","volkswagen","id.4","stockholm",339900
 "159",5659,2021,"suv",2,204,"blå","volkswagen","id.4","stockholm",368900
 "160",4388,2020,"halvkombi",2,136,"vit","volkswagen","e-golf","stockholm",211900
-"161",2226,2020,"halvkombi",2,83,"vit","volkswagen","e-up!","göteborg",140000
+"161",2226,2020,"halvkombi",2,83,"vit","volkswagen","e-up!","västra götaland",140000
 "162",1700,2020,"halvkombi",2,83,"vit","volkswagen","e-up!","blekinge",189900
 "163",2008,2020,"halvkombi",2,83,"vit","volkswagen","e-up!","blekinge",179900
 "164",6231,2021,"suv",2,204,"vit","volkswagen","id.4","stockholm",407900
@@ -167,29 +167,29 @@
 "166",8200,2014,"halvkombi",2,82,"silver","volkswagen","e-up!","stockholm",119900
 "167",6200,2017,"halvkombi",2,82,"vit","volkswagen","e-up!","blekinge",139000
 "168",11865,2019,"halvkombi",2,136,"vit","volkswagen","e-golf","norrbotten",199900
-"169",5211,2018,"halvkombi",2,136,"vit","volkswagen","e-golf","göteborg",179800
-"170",6624,2019,"halvkombi",2,136,"vit","volkswagen","e-golf","göteborg",184800
-"171",5329,2018,"halvkombi",2,136,"vit","volkswagen","e-golf","göteborg",189900
+"169",5211,2018,"halvkombi",2,136,"vit","volkswagen","e-golf","västra götaland",179800
+"170",6624,2019,"halvkombi",2,136,"vit","volkswagen","e-golf","västra götaland",184800
+"171",5329,2018,"halvkombi",2,136,"vit","volkswagen","e-golf","västra götaland",189900
 "172",4491,2022,"suv",2,204,"mörkgrå","volkswagen","id.4","stockholm",449900
 "173",2923,2020,"halvkombi",2,136,"vit","volkswagen","e-golf","västerbotten",239000
 "174",4315,2020,"halvkombi",2,83,"silver","volkswagen","e-up!","dalarna",169900
 "175",9082,2021,"halvkombi",2,204,"grå","volkswagen","id.3","västmanland",239000
 "176",10135,2021,"suv",2,204,"blå","volkswagen","id.4","värmland",329500
 "177",2787,2021,"halvkombi",2,204,"grå","volkswagen","id.3","södermanland",274800
-"178",1700,2023,"suv",2,204,"grå","volkswagen","id.4","älvsborg",419900
+"178",1700,2023,"suv",2,204,"grå","volkswagen","id.4","västra götaland",419900
 "179",5843,2020,"halvkombi",2,207,"röd","volkswagen","id.3","stockholm",388800
 "180",3000,2021,"halvkombi",2,204,"vit","volkswagen","id.3","södermanland",307000
-"181",1560,2023,"suv",2,207,"blå","volkswagen","id.4","göteborg",439900
+"181",1560,2023,"suv",2,207,"blå","volkswagen","id.4","västra götaland",439900
 "182",4530,2021,"suv",2,204,"gul","volkswagen","id.4","stockholm",378900
 "183",5400,2022,"suv",4,300,"blå","volkswagen","id.4","norrbotten",549900
 "184",1500,2023,"suv",4,300,"svart","volkswagen","id.4","södermanland",549000
 "185",1740,2022,"suv",4,300,"grå","volkswagen","id.4","södermanland",467500
 "186",2940,2022,"suv",4,300,"vit","volkswagen","id.4","uppsala",484900
-"187",1045,2023,"suv",4,304,"svart","volkswagen","id.4","göteborg",549900
+"187",1045,2023,"suv",4,304,"svart","volkswagen","id.4","västra götaland",549900
 "188",3229,2022,"sedan",4,498,"vit","tesla","3","stockholm",484900
 "189",2723,2021,"sedan",4,441,"svart","tesla","3","stockholm",434900
 "190",10500,2019,"suv",4,423,"grå","tesla","x","skåne",549900
-"191",6315,2021,"sedan",4,446,"grå","tesla","3","skaraborg",438400
+"191",6315,2021,"sedan",4,446,"grå","tesla","3","västra götaland",438400
 "192",5902,2021,"sedan",4,441,"vit","tesla","3","norrbotten",448500
 "193",8183,2020,"sedan",4,491,"vit","tesla","3","stockholm",365900
 "194",7234,2021,"sedan",4,441,"vit","tesla","3","västmanland",399800
@@ -199,16 +199,16 @@
 "198",7308,2019,"sedan",4,476,"röd","tesla","3","stockholm",344900
 "199",8589,2021,"sedan",4,441,"vit","tesla","3","stockholm",374800
 "200",5321,2021,"sedan",4,498,"vit","tesla","3","stockholm",406900
-"201",11524,2015,"halvkombi",4,423,"röd","tesla","s","göteborg",318900
-"202",17069,2019,"halvkombi",4,762,"grå","tesla","s","göteborg",500000
-"203",16454,2015,"sedan",4,334,"vit","tesla","s","göteborg",259900
-"204",10823,2016,"halvkombi",4,423,"svart","tesla","s","göteborg",439900
-"205",15949,2016,"suv",4,540,"vit","tesla","x","göteborg",459900
-"206",15288,2015,"halvkombi",4,334,"svart","tesla","s","göteborg",269900
+"201",11524,2015,"halvkombi",4,423,"röd","tesla","s","västra götaland",318900
+"202",17069,2019,"halvkombi",4,762,"grå","tesla","s","västra götaland",500000
+"203",16454,2015,"sedan",4,334,"vit","tesla","s","västra götaland",259900
+"204",10823,2016,"halvkombi",4,423,"svart","tesla","s","västra götaland",439900
+"205",15949,2016,"suv",4,540,"vit","tesla","x","västra götaland",459900
+"206",15288,2015,"halvkombi",4,334,"svart","tesla","s","västra götaland",269900
 "207",2933,2020,"sedan",4,441,"svart","tesla","3","halland",409900
-"208",2499,2021,"sedan",4,330,"vit","tesla","3","skaraborg",387800
-"209",15024,2015,"halvkombi",4,512,"grå","tesla","s","skaraborg",375000
-"210",7710,2019,"sedan",4,463,"blå","tesla","3","skaraborg",349900
+"208",2499,2021,"sedan",4,330,"vit","tesla","3","västra götaland",387800
+"209",15024,2015,"halvkombi",4,512,"grå","tesla","s","västra götaland",375000
+"210",7710,2019,"sedan",4,463,"blå","tesla","3","västra götaland",349900
 "211",5718,2021,"sedan",4,513,"vit","tesla","3","skåne",499900
 "212",8898,2017,"suv",4,423,"vit","tesla","x","skåne",499900
 "213",13400,2016,"halvkombi",4,320,"vit","tesla","s","skåne",319900
@@ -246,9 +246,9 @@
 "245",2991,2023,"suv",4,325,"blå","kia","ev6","stockholm",519900
 "246",1849,2023,"suv",4,325,"röd","kia","ev6","stockholm",558900
 "247",8908,2022,"suv",4,325,"svart","kia","ev6","stockholm",476900
-"248",7647,2021,"suv",2,204,"vit","kia","soul","göteborg",259900
+"248",7647,2021,"suv",2,204,"vit","kia","soul","västra götaland",259900
 "249",1570,2022,"suv",2,204,"vit","kia","ev6","södermanland",334800
-"250",11800,2015,"suv",2,136,"vit","kia","soul","älvsborg",110000
+"250",11800,2015,"suv",2,136,"vit","kia","soul","västra götaland",110000
 "251",5165,2022,"suv",4,325,"blå","kia","ev6","stockholm",517900
 "252",3590,2021,"suv",2,204,"svart","kia","niro","stockholm",320900
 "253",3537,2022,"suv",4,325,"svart","kia","ev6","stockholm",534900
@@ -256,10 +256,10 @@
 "255",1650,2023,"suv",2,204,"grå","kia","niro","skåne",389000
 "256",5000,2021,"suv",2,204,"vit","kia","niro","skåne",309000
 "257",1400,2023,"suv",2,229,"grå","kia","ev6","skåne",499000
-"258",5848,2021,"suv",2,204,"svart","kia","niro","göteborg",299000
+"258",5848,2021,"suv",2,204,"svart","kia","niro","västra götaland",299000
 "259",1155,2024,"suv",4,385,"vit","kia","ev9","västerbotten",809900
 "260",520,2023,"suv",4,585,"röd","kia","ev6","skåne",649000
-"261",4033,2019,"suv",2,111,"vit","kia","soul","älvsborg",165000
+"261",4033,2019,"suv",2,111,"vit","kia","soul","västra götaland",165000
 "262",13237,2016,"suv",2,136,"vit","kia","soul","östergötland",139900
 "263",3900,2023,"suv",2,204,"vit","kia","niro","skåne",385000
 "264",4780,2021,"suv",2,204,"röd","kia","ev6","dalarna",529000
@@ -267,58 +267,58 @@
 "266",2690,2021,"suv",2,204,"grå","kia","niro","skåne",339000
 "267",5412,2021,"suv",2,204,"grå","kia","soul","skåne",279900
 "268",2000,2023,"suv",4,325,"vit","kia","ev6","skåne",579000
-"269",6032,2020,"suv",2,204,"svart","kia","niro","älvsborg",279000
-"270",1100,2024,"suv",4,385,"blå","kia","ev9","göteborg",839000
+"269",6032,2020,"suv",2,204,"svart","kia","niro","västra götaland",279000
+"270",1100,2024,"suv",4,385,"blå","kia","ev9","västra götaland",839000
 "271",6140,2020,"suv",2,204,"svart","kia","niro","skåne",279000
-"272",1000,2024,"suv",4,325,"vit","kia","ev6","göteborg",638400
-"273",500,2024,"suv",4,385,"grå","kia","ev9","göteborg",819000
+"272",1000,2024,"suv",4,325,"vit","kia","ev6","västra götaland",638400
+"273",500,2024,"suv",4,385,"grå","kia","ev9","västra götaland",819000
 "274",5721,2020,"suv",2,204,"röd","kia","soul","norrbotten",289900
 "275",6036,2021,"suv",2,204,"svart","kia","niro","örebro",315800
-"276",2925,2023,"suv",4,325,"vit","kia","ev6","skaraborg",569000
+"276",2925,2023,"suv",4,325,"vit","kia","ev6","västra götaland",569000
 "277",1500,2022,"kombi",2,177,"grå","mg","5","kalmar",334900
-"278",4380,2021,"suv",4,289,"svart","mg","r","karlskrona",359800
-"279",3609,2021,"suv",2,143,"röd","mg","zs","vetlanda",219400
-"280",1127,2022,"kombi",2,177,"grå","mg","5","skövde",309900
-"281",3579,2020,"suv",2,143,"svart","mg","zs","nässjö",219900
+"278",4380,2021,"suv",4,289,"svart","mg","r","blekinge",359800
+"279",3609,2021,"suv",2,143,"röd","mg","zs","jönköping",219400
+"280",1127,2022,"kombi",2,177,"grå","mg","5","västra götaland",309900
+"281",3579,2020,"suv",2,143,"svart","mg","zs","jönköping",219900
 "282",3920,2021,"suv",2,157,"vit","mg","zs","kalmar",299800
 "283",4180,2022,"suv",2,180,"svart","mg","r","stockholm",329900
 "284",3129,2021,"suv",2,143,"blå","mg","zs","stockholm",209900
-"285",1650,2020,"sedan",2,143,"svart","mg","zs","nässjö",219900
-"286",1329,2022,"suv",4,289,"svart","mg","r","nyköping",359800
-"287",1100,2021,"kombi",2,157,"svart","mg","5","norrköping",269900
+"285",1650,2020,"sedan",2,143,"svart","mg","zs","jönköping",219900
+"286",1329,2022,"suv",4,289,"svart","mg","r","södermanland",359800
+"287",1100,2021,"kombi",2,157,"svart","mg","5","östergötland",269900
 "288",730,2022,"suv",2,180,"vit","mg","marvel","jönköping",389900
-"289",2190,2021,"suv",2,143,"vit","mg","zs","karlskrona",219800
-"290",1766,2022,"suv",4,289,"vit","mg","r","växjö",389900
+"289",2190,2021,"suv",2,143,"vit","mg","zs","blekinge",219800
+"290",1766,2022,"suv",4,289,"vit","mg","r","kronoberg",389900
 "291",2896,2022,"kombi",2,157,"vit","mg","5","kalmar",334800
-"292",500,2022,"suv",2,157,"svart","mg","zs","nyköping",319900
-"293",2716,2022,"suv",2,157,"svart","mg","zs","växjö",294800
-"294",2148,2021,"suv",2,143,"röd","mg","zs","växjö",214800
-"295",3694,2022,"suv",2,157,"grå","mg","zs","växjö",294800
-"296",1000,2022,"sedan",2,177,"vit","mg","5","nässjö",309900
-"297",1600,2022,"suv",4,289,"vit","mg","r","nässjö",457900
-"298",1295,2022,"suv",2,157,"vit","mg","zs","falun",289900
-"299",1940,2022,"suv",2,180,"grå","mg","r","västerås",369900
-"300",2650,2022,"kombi",2,177,"röd","mg","5","skövde",311750
+"292",500,2022,"suv",2,157,"svart","mg","zs","södermanland",319900
+"293",2716,2022,"suv",2,157,"svart","mg","zs","kronoberg",294800
+"294",2148,2021,"suv",2,143,"röd","mg","zs","kronoberg",214800
+"295",3694,2022,"suv",2,157,"grå","mg","zs","kronoberg",294800
+"296",1000,2022,"sedan",2,177,"vit","mg","5","jönköping",309900
+"297",1600,2022,"suv",4,289,"vit","mg","r","jönköping",457900
+"298",1295,2022,"suv",2,157,"vit","mg","zs","dalarna",289900
+"299",1940,2022,"suv",2,180,"grå","mg","r","västmanland",369900
+"300",2650,2022,"kombi",2,177,"röd","mg","5","västra götaland",311750
 "301",500,2022,"kombi",2,157,"röd","mg","5","kalmar",329900
-"302",2336,2022,"kombi",2,177,"svart","mg","5","vetlanda",279800
-"303",700,2023,"halvkombi",4,436,"grön","mg","4","växjö",437000
-"304",500,2022,"suv",2,180,"vit","mg","r","norrköping",399900
-"305",500,2022,"kombi",2,177,"grå","mg","5","karlskrona",344500
-"306",950,2022,"halvkombi",2,204,"svart","mg","4","nyköping",339800
-"307",950,2022,"suv",2,157,"vit","mg","zs","nyköping",334800
-"308",2500,2022,"kombi",2,157,"svart","mg","5","vimmerby",339900
-"309",950,2022,"suv",2,157,"vit","mg","zs","nyköping",334800
-"310",900,2022,"kombi",2,157,"röd","mg","5","norrköping",289900
+"302",2336,2022,"kombi",2,177,"svart","mg","5","jönköping",279800
+"303",700,2023,"halvkombi",4,436,"grön","mg","4","kronoberg",437000
+"304",500,2022,"suv",2,180,"vit","mg","r","östergötland",399900
+"305",500,2022,"kombi",2,177,"grå","mg","5","blekinge",344500
+"306",950,2022,"halvkombi",2,204,"svart","mg","4","södermanland",339800
+"307",950,2022,"suv",2,157,"vit","mg","zs","södermanland",334800
+"308",2500,2022,"kombi",2,157,"svart","mg","5","kalmar",339900
+"309",950,2022,"suv",2,157,"vit","mg","zs","södermanland",334800
+"310",900,2022,"kombi",2,157,"röd","mg","5","östergötland",289900
 "311",4331,2021,"suv",2,191,"vit","mb","eqa","stockholm",408900
 "312",7695,2020,"suv",4,408,"grå","mb","eqc","stockholm",473900
 "313",6531,2021,"suv",2,191,"vit","mb","eqa","stockholm",434900
 "314",1280,2022,"suv",4,229,"mörkgrå","mb","eqa","stockholm",474900
 "315",4919,2020,"suv",4,408,"röd","mb","eqc","stockholm",494900
-"316",1650,2022,"suv",4,229,"röd","mb","eqb","vimmerby",549900
+"316",1650,2022,"suv",4,229,"röd","mb","eqb","kalmar",549900
 "317",2100,2021,"suv",4,408,"grå","mb","eqc","stockholm",548900
-"318",3900,2023,"sedan",2,293,"svart","mb","eqe","vimmerby",659000
+"318",3900,2023,"sedan",2,293,"svart","mb","eqe","kalmar",659000
 "319",7629,2022,"suv",2,191,"mörkgrå","mb","eqa","stockholm",434900
-"320",1320,2023,"sedan",2,245,"grå","mb","eqe","västervik",659000
+"320",1320,2023,"sedan",2,245,"grå","mb","eqe","kalmar",659000
 "321",840,2022,"suv",2,301,"svart","ford","mustang","södermanland",499000
 "322",3600,2021,"halvkombi",2,301,"blå","ford","mustang","jönköping",438800
 "323",1525,2022,"sedan",2,301,"svart","ford","mustang","jönköping",679800
@@ -341,9 +341,9 @@
 "340",3000,2021,"suv",4,270,"grå","ford","mustang","västmanland",419000
 "341",2547,2022,"sedan",2,301,"röd","ford","mustang","jönköping",499900
 "342",1170,2022,"suv",2,301,"vit","ford","mustang","örebro",499900
-"343",1500,2022,"suv",2,297,"svart","ford","mustang","göteborg",539900
-"344",1600,2022,"suv",2,298,"svart","ford","mustang","göteborg",539900
-"345",1366,2022,"suv",2,298,"grå","ford","mustang","skaraborg",539900
+"343",1500,2022,"suv",2,297,"svart","ford","mustang","västra götaland",539900
+"344",1600,2022,"suv",2,298,"svart","ford","mustang","västra götaland",539900
+"345",1366,2022,"suv",2,298,"grå","ford","mustang","västra götaland",539900
 "346",1100,2023,"suv",4,374,"svart","ford","mustang","örebro",649800
 "347",3117,2023,"suv",2,301,"blå","ford","mustang","kronoberg",578700
 "348",1809,2022,"sedan",2,301,"grå","ford","mustang","jönköping",499900
@@ -356,10 +356,55 @@
 "355",2200,2022,"suv",2,301,"grå","ford","mustang","södermanland",770700
 "356",2400,2022,"suv",2,301,"blå","ford","mustang","östergötland",551900
 "357",1244,2022,"suv",2,301,"röd","ford","mustang","jönköping",499900
-"358",1547,2022,"suv",2,298,"grå","ford","mustang","göteborg",539900
+"358",1547,2022,"suv",2,298,"grå","ford","mustang","västra götaland",539900
 "359",1650,2022,"suv",2,301,"vit","ford","mustang","östergötland",739900
 "360",1400,2022,"suv",2,301,"vit","ford","mustang","jönköping",539700
-"361",1485,2022,"suv",2,298,"röd","ford","mustang","göteborg",539900
+"361",1485,2022,"suv",2,298,"röd","ford","mustang","västra götaland",539900
 "362",1553,2022,"suv",4,372,"vit","ford","mustang","kronoberg",763800
 "363",2800,2022,"suv",2,301,"röd","ford","mustang","södermanland",774700
 "364",2090,2022,"halvkombi",2,301,"orange","ford","mustang","jönköping",469900
+"365",5078,2018,"halvkombi",2,184,"röd","bmw","i3s","stockholm",218900
+"366",5055,2017,"halvkombi",2,170,"silver","bmw","i3","stockholm",199700
+"367",9476,2017,"halvkombi",2,170,"blå","bmw","i3","skåne",188900
+"368",8670,2017,"halvkombi",2,170,"vit","bmw","i3","skåne",188900
+"369",2109,2022,"suv",2,286,"svart","bmw","ix3","kronoberg",639800
+"370",9403,2019,"halvkombi",2,184,"svart","bmw","i3s","stockholm",221900
+"371",4427,2019,"halvkombi",2,170,"vit","bmw","i3","stockholm",219900
+"372",3077,2020,"halvkombi",2,170,"vit","bmw","i3","stockholm",217900
+"373",6544,2019,"halvkombi",2,184,"svart","bmw","i3s","stockholm",221900
+"374",2834,2020,"halvkombi",2,170,"vit","bmw","i3","stockholm",219900
+"375",6391,2019,"halvkombi",2,170,"svart","bmw","i3","stockholm",203900
+"376",5789,2019,"halvkombi",2,184,"brun","bmw","i3s","stockholm",219900
+"377",4690,2020,"halvkombi",2,184,"vit","bmw","i3s","stockholm",224900
+"378",6946,2018,"halvkombi",2,184,"röd","bmw","i3s","stockholm",183900
+"379",5881,2019,"halvkombi",2,184,"röd","bmw","i3s","stockholm",235900
+"380",1479,2022,"halvkombi",2,170,"vit","bmw","i3","stockholm",261900
+"381",4595,2020,"halvkombi",2,184,"grå","bmw","i3","stockholm",244900
+"382",5921,2018,"halvkombi",2,184,"blå","bmw","i3s","stockholm",219800
+"383",2018,2022,"halvkombi",2,184,"blå","bmw","i3s","stockholm",292900
+"384",2189,2022,"halvkombi",2,184,"grå","bmw","i3","stockholm",272900
+"385",5502,2017,"halvkombi",2,170,"svart","bmw","i3","västra götaland",204800
+"386",9096,2015,"halvkombi",2,170,"vit","bmw","i3","skåne",149800
+"387",3190,2023,"halvkombi",2,340,"vit","bmw","i4","jönköping",599800
+"388",2990,2020,"halvkombi",2,170,"vit","bmw","i3","jönköping",224900
+"389",1449,2023,"suv",4,272,"svart","bmw","ix1","kalmar",589900
+"390",2778,2022,"suv",4,327,"grå","bmw","ix","kalmar",759900
+"391",3150,2021,"suv",2,286,"silver","bmw","ix3","kalmar",559900
+"392",3133,2020,"halvkombi",2,170,"vit","bmw","i3","stockholm",228900
+"393",6224,2018,"halvkombi",2,184,"svart","bmw","i3s","skåne",209800
+"394",1700,2021,"halvkombi",2,184,"vit","bmw","i3s","södermanland",309900
+"395",9668,2018,"halvkombi",2,170,"blå","bmw","i3","västernorrland",179900
+"396",750,2024,"suv",4,272,"svart","bmw","ix1","kalmar",699800
+"397",890,2024,"suv",4,306,"grå","bmw","ix2","blekinge",719800
+"398",3940,2020,"halvkombi",2,170,"vit","bmw","i3","jönköping",219900
+"399",12220,2020,"suv",2,286,"vit","bmw","ix3","jönköping",439900
+"400",3865,2022,"suv",4,327,"svart","bmw","ix","kalmar",649800
+"401",6500,2022,"suv",4,327,"vit","bmw","ix","kalmar",629800
+"402",3555,2018,"halvkombi",2,170,"röd","bmw","i3","västmanland",208900
+"403",5918,2021,"halvkombi",2,184,"vit","bmw","i3s","stockholm",234900
+"404",2696,2021,"halvkombi",2,184,"vit","bmw","i3s","kalmar",369900
+"405",2231,2021,"halvkombi",2,184,"grå","bmw","i3s","västra götaland",329900
+"406",2082,2021,"halvkombi",2,184,"vit","bmw","i3s","kalmar",289800
+"407",4545,2022,"suv",4,327,"grå","bmw","ix","blekinge",697000
+"408",2651,2022,"halvkombi",2,170,"svart","bmw","i3","östergötland",288900
+"409",775,2024,"halvkombi",2,340,"grön","bmw","i4","västra götaland",678900

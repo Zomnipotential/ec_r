@@ -1,19 +1,30 @@
 # import csv file into a for R suitable datastructure
 install.packages("jsonlite")
-install.packages("jsonlite", repos = "http://cran.us.r-project.org")
+install.packages("jsonlite", repos = "https://cloud.r-project.org/")
 # which R gives /usr/local/bin/R
 # defaults write org.R-project.R r.rpath.mac /usr/local/bin/R
 # The downloaded binary packages are in
-# /var/folders/1s/vk0n_73d4ndcz49qcnxf6wf40000gp/T//RtmpBPa30s/downloaded_packages
+# /var/folders/1s/vk0n_73d4ndcz49qcnxf6wf40000gp/T/
+# /RtmpBPa30s/downloaded_packages
+
+is_dataframe <- function(table) {
+  if (is.data.frame(table)) {
+    print(paste("The", deparse(substitute(table)), "is a dataframe"))
+  } else {
+    print(paste("The", deparse(substitute(table)), "is not a dataframe"))
+  }
+}
 
 # Load the data
 data <- read.csv("2404152328_Cars.csv", header = TRUE, sep = ",")
+is_dataframe(data)
 
 # Remove everything in columns 11 and onwards
 feed <- data[, 1:10]
+is_dataframe(feed)
 
 # Print the feed
-print(feed)
+print(head(feed))
 
 # Get the number of empty cells in each column and print the result
 empty_cells <- sapply(feed, function(x) sum(is.na(x)))
@@ -23,21 +34,30 @@ print(empty_cells)
 column_types <- sapply(feed, class)
 print(column_types)
 
+# Convert the first column of feed to integers
+feed[, 1] <- as.integer(feed[, 1])
+
+# change the type of the column Pris..Y. to integer.
+# If the string contains spaces, remove them
+feed$Pris..Y. <- as.integer(gsub(" ", "", feed$Pris..Y.))
+
+# Get the type of each column and print the result
+column_types <- sapply(feed, class)
+print(column_types)
+
 # Convert all columns of the type character to all small letters
-#feed <- sapply(feed, function(x) if(is.character(x)) tolower(x) else x)
+#feed <- sapply(feed, function(x) if (is.character(x)) tolower(x) else x)
 
-# Print the feed
-# print(feed)
-
-# Separate the columns of the type integer as a new data frame called all_integers
+# Separate the columns of the type integer as a new data frame
 #all_integers <- feed[, sapply(feed, is.integer)]
 #print(all_integers)
 
 # Print the dimensions of feed
 #print(dim(all_integers))
 
-# For each of the columns 3, 6 - 9 of feed, remove the leading, middle, and trailing whitespaces
-feed[, c(3, 6:9)] <- sapply(feed[, c(3, 6:9)], function(x) gsub("^\\s+|\\s+$", "", x))
+# For each of the columns 3, 6 - 9 of feed, remove all whitespaces
+spaces <- "^\\s+|\\s+$"
+feed[, c(3, 6:9)] <- sapply(feed[, c(3, 6:9)], function(x) gsub(spaces, "", x))
 
 # Convert all characters in the columns 3, 6 - 9 of feed to small letters
 feed[, c(3, 6:9)] <- sapply(feed[, c(3, 6:9)], function(x) tolower(x))
@@ -45,20 +65,18 @@ feed[, c(3, 6:9)] <- sapply(feed[, c(3, 6:9)], function(x) tolower(x))
 # Remove the square brackets from the cells of the column 6 of feed
 feed[, 6] <- gsub("\\[|\\]", "", feed[, 6])
 
-# Convert the first column of feed to integers
-feed[, 1] <- as.integer(feed[, 1])
-
-# Remove all spaces in the cells of the last column of feed and convert them all to integers
+# Remove all spaces in the last column of feed and convert them all to integers
 feed[, 10] <- as.integer(gsub(" ", "", feed[, 10]))
 
 # Print out each unique value and its frequency in the first column of feed
 print(table(feed[, 6]))
 
-# Get the number of unique values in each column and print the result, each one in a new line
+# Get the number of unique values in each column and print the result
 unique_values <- sapply(feed, function(x) length(unique(x)))
 print(unique_values)
 
 # Save the feed into a new file called "carfeed.csv"
+is_dataframe(feed)
 write.csv(feed, file = "carfeed.csv")
 
 # -----------------------------------------------------------
@@ -66,88 +84,253 @@ write.csv(feed, file = "carfeed.csv")
 # -----------------------------------------------------------
 
 # Read the file missing_values.csv into a new data frame called missing_values
-missing_values <- read.csv("car_missing_values.csv", header = FALSE, sep = ",")
-print(missing_values)
-print(class(missing_values))
+no_value <- read.csv("car_missing_values.csv", header = FALSE, sep = ",")
+print(no_value)
+print(class(no_value))
 
-# Remove spaces within the cells of the missing_values and convert the result to data frame
-missing_values <- as.data.frame(sapply(missing_values, function(x) gsub(" ", "", x)))
-print(missing_values)
-print(class(missing_values))
+# Remove spaces in missing_values and convert the result to data frame
+no_value <- as.data.frame(sapply(no_value, function(x) gsub(" ", "", x)))
+print(no_value)
+print(class(no_value))
 
 # Convert the missing_values to a dataframe with one column and print the result
-missing_values <- as.data.frame(missing_values)
-print(missing_values)
-print(class(missing_values))
+no_value <- as.data.frame(no_value)
+print(no_value)
+print(class(no_value))
 
 # Print the dimensions of the missing_values
-print(dim(missing_values))
+print(dim(no_value))
 
 # Add the values in missing_values to the feed in column 1 from row 140 onwards
-feed[140:187, 1] <- missing_values[1:48, 1]
+feed[140:187, 1] <- no_value[1:48, 1]
 
 # Convert the first column of feed to integer
 feed[, 1] <- as.integer(feed[, 1])
 
+# Save the feed into "carfeed.csv"
+is_dataframe(feed)
+write.csv(feed, file = "carfeed.csv")
+
+# --Appendix-------------------------------------------------
+
+# Make a list of all the counties in Sweden
+counties <- c("blekinge", "dalarna", "gotland", "gävleborg", "halland"
+              , "jämtland", "jönköping", "kalmar", "kronoberg", "norrbotten"
+              , "skåne", "stockholm", "södermanland", "uppsala", "värmland"
+              , "västerbotten", "västernorrland", "västmanland"
+              , "västra götaland", "örebro", "östergötland")
+print(length(counties))
+
+# Ensure the Län column is of character type
+feed$Län <- as.character(feed$Län)
+
+# Trim whitespace from the Län column
+feed$Län <- trimws(feed$Län)
+
+# Get all the unique values in the column Län of feed with their frequency
+unique_values <- table(feed$Län)
+print(unique_values)
+
+# Write all the changes as dictionary
+all_changes <- c(
+  "borås" = "västra götaland",
+  "falun" = "dalarna",
+  "göteborg" = "västra götaland",
+  "hörby" = "skåne",
+  "järfälla" = "stockholm",
+  "karlskrona" = "blekinge", 
+  "karlstad" = "värmland",
+  "knivsta" = "uppsala",
+  "kristianstad" = "skåne",
+  "kungälv" = "västra götaland",
+  "lidköping" = "västra götaland",
+  "linköping" = "östergötland",
+  "llinköping" = "östergötland",
+  "löstergötland" = "östergötland",
+  "lund" = "skåne",
+  "malmö" = "skåne",
+  "nordvästra södermanland" = "södermanland",
+  "norrköping" = "östergötland",
+  "nyköping" = "södermanland",
+  "nässjö" = "jönköping",
+  "skaraborg" = "västra götaland",
+  "skövde" = "västra götaland",
+  "stcokholm" = "stockholm",
+  "tranemo" = "västra götaland",
+  "trollhättan" = "västra götaland",
+  "vetlanda" = "jönköping",
+  "vimmerby" = "kalmar",
+  "värnamo" = "jönköping",
+  "västervik" = "kalmar",
+  "västerås" = "västmanland",
+  "växjö" = "kronoberg",
+  "älvsborg" = "västra götaland",
+  "örnsköldsvik" = "västernorrland",
+  "österåker" = "stockholm")
+
+for (old_county in names(all_changes)) {
+  new_county <- all_changes[[old_county]]
+  feed$Län <- gsub(old_county, new_county, feed$Län, ignore.case = TRUE)
+}
+
+# Check that all the elements in 'Län' can be found in 'counties'
+print(all(feed$Län %in% counties))
+
+# Show those elements in 'Län' that are not in 'counties'
+print(setdiff(unique(feed$Län), counties))
+
 # Save the feed into a new file called "carfeed.csv"
+is_dataframe(feed)
 write.csv(feed, file = "carfeed.csv")
 
 # -----------------------------------------------------------
 # ------------Do not change anything above this line---------
 # -----------------------------------------------------------
 
-# Find the value "stcokholm", print its row number and change its value to "stockholm" the column "Län" of feed
+# Strip the columns in feed_characters of leading and trailing whitespaces
+#feed2 <- sapply(feed2, function(x) trimws(x))
+feed <- as.data.frame(lapply(feed, function(x) trimws(as.character(x))))
+is_dataframe(feed)
+
+# Show the unique values in the column 1 of feed_characters with its frequency
+# String-values
+print(table(feed[, "Biltyp"])) # Biltyp
+print(table(feed[, "Färg"])) # Färg
+print(table(feed[, "Märke"])) # Märke
+print(table(feed[, "Modell"])) # Modell             <- Similarity
+print(table(feed[, "Län"])) # Län
+# Numerical values
+print(table(feed[, "Miltal"])) # Miltal             
+print(table(feed[, "Modellår"])) # Modellår
+print(table(feed[, "Drivning"])) # Drivning
+print(table(feed[, "Hästkrafter"])) # Hästkrafter
+print(table(feed[, "Pris..Y."])) # Pris..Y.
+
+# -----------------------------------------------------------
+# ------------Do not change anything above this line---------
+# -----------------------------------------------------------
+
+# Model has too many values that are the same, and many of them are just model
+# names, having no actual numerical value. In other words, Modell is actually
+# could be just a categorical and not an ordinal variable. If we had more 
+# infomation about how this variable relates to ordinal qualities, like car 
+# size, horse power, cylinder size, Biltyp, and other ordinal features, or 
+# categorical such as Drivmedel. We may thus need to engineer this feature, by 
+# combining it with another one, such as märke or biltyp to create a new feature
+# So we decided to use Märke together with Modell
+
+is_dataframe(feed)
+print(mode(table(feed$Hästkrafter[1])))
+
+# Create a new column called Märke_modell in the data frame feed that combines 
+# the two columns Märke and Modell using an underscore
+feed$Märke_modell <- paste(feed$Märke, feed$Modell, sep = "_")
+
+# Print the unique values in the column Märke_modell
+is_dataframe(feed)
+print(head(feed))
+print(table(feed$Märke_modell))
+
+# Remove the two columns Märke and Modell from feed
+feed <- feed[, !(names(feed) %in% c("Märke", "Modell"))]
+print(head(feed))
+print(table(feed$Märke_modell))
+
+# Make a copy of the feed
+is_dataframe(feed)
+write.csv(feed, file = "carfeed_1.csv")
+
+# -----------------------------------------------------------
+# ------------Do not change anything above this line---------
+# -----------------------------------------------------------
+
+# Create a dummy encoding of 'column' in 'data'
+dummy_encoding <- function(data, column) {
+  dummy_column <- model.matrix(~ column - 1, data = data)
+  data <- cbind(data, dummy_column)
+  data <- data[, !(names(data) %in% column)]
+  write.csv(data, file = paste("carfeed_", column, "_dummies.csv", sep = ""))
+  return(data)
+}
+
+feed <- dummy_encoding(feed, 'Färg')
+print(head(feed))
+
+
+
+
+
+# --Appendix-------------------------------------------------
+# -----------------------------------------------------------
+# ------------This part can be used only if necessary--------
+# -----------------------------------------------------------
+
+# Find the value "stcokholm", print its row number and correct it in feed
 print(which(feed$Län == "stcokholm"))
 feed[feed$Län == "stcokholm", "Län"] <- "stockholm"
 
-# Save the feed into a new file called "carfeed.csv"
-write.csv(feed, file = "carfeed.csv")
+# Get all the unique values in the column Län of feed
+unique_values <- unique(feed$Län)
+print(unique_values)
+
+# Write a function that takes two strings, city and county and replaces 
+# instances of city in the column Län with county
+replace_city <- function(city, county) {
+  feed$Län <<- gsub(city, county, feed$Län, ignore.case = TRUE)
+}
+
+# Implement a function that takes the column Län and for each unique value,
+# if that value is in the county list, does nothing, otherwise prompts
+# the user to enter the correct county, and then replaces the value in 
+# the column Län with the correct county for that value
+correct_counties <- function() {
+  for (county in unique(feed$Län)) {
+    if (!(county %in% counties)) {
+      repeat {
+        print(paste("The county", county, "is not in the list of counties"))
+        new_county <- readline(prompt = "Enter a new county: ")
+        if (new_county %in% counties) {
+          replace_city(county, new_county)
+          break
+        }
+      }
+    }
+  }
+}
+correct_counties() # Use for manual correction
 
 # -----------------------------------------------------------
-# ------------Do not change anything above this line---------
+# ------------Code to replace a column with dummies----------
 # -----------------------------------------------------------
 
-# Gather all the columns of type integer in a data frame called feed_integers
-feed_integers <- feed[, sapply(feed, is.integer)]
-print(feed_integers)
+# Create a dummy encoding of Biltyp in feed and add the dummy columns
+dummy_biltyp <- model.matrix(~ Biltyp - 1, data = feed)
+print(head(dummy_biltyp))
 
-# Gather all the clumns of type character in a data frame called feed_characters
-feed_characters <- feed[, sapply(feed, is.character)]
-print(feed_characters)
+# Add the dummy columns to feed
+feed <- cbind(feed, dummy_biltyp)
+print(head(feed))
 
-# Strip the columns in feed_characters of leading and trailing whitespaces without changing the dimensions of the data frame
-feed_characters <- sapply(feed_characters, function(x) trimws(x))
+# Remove the Biltyp column from feed
+feed <- feed[, !(names(feed) %in% "Biltyp")]
+print(head(feed))
 
-# Show the unique values in the column 1 of feed_characters with its frequency
-print(table(feed_characters[, 1])) # Biltyp
-print(table(feed_characters[, 2])) # Färg
-print(table(feed_characters[, 3])) # Märke
-print(table(feed_characters[, 4])) # Modell
-print(table(feed_characters[, 5])) # Län
+# Make a copy of the feed
+is_dataframe(feed)
+write.csv(feed, file = "carfeed_biltyp_dummies.csv")
 
-# Show the unique values in the column 1 of feed_integers with its frequency
-print(table(feed_integers[, 1])) # Miltal
-print(table(feed_integers[, 2])) # Modellår
-print(table(feed_integers[, 3])) # Drivning
-print(table(feed_integers[, 4])) # Hästkrafter
-print(table(feed_integers[, 5])) # Pris
+# -----------------------------------------------------------
+# -----To reset all the variables, except feed and feed1-----
+# -----------------------------------------------------------
 
-# Empty all variables from the workspace
-data <- NULL
-feed <- NULL
-empty_cells <- NULL
-column_types <- NULL
-all_integers <- NULL
-unique_values <- NULL
-missing_values <- NULL
-feed_integers <- NULL
-feed_characters <- NULL
+ls()
+rm(list = ls()[ls() != "feed" & ls() != "feed_1"])
+ls()
 
-# Read carfeed.csv into a new data frame called carfeed
-carfeed <- read.csv("carfeed.csv", header = TRUE, sep = ",")
+# -----------------------------------------------------------
+# -----To reset all the variables, use this code snippet-----
+# -----------------------------------------------------------
 
-# Print the first 6 rows of carfeed
-print(head(carfeed))
-
-x_tra <- 5
-print(x_tra)
+ls()
+rm(list = ls())
+ls()
