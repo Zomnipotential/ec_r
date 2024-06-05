@@ -15,8 +15,10 @@ is_dataframe <- function(table) {
   }
 }
 
+list.files()
+
 # Load the data
-data <- read.csv("2404152328_Cars.csv", header = TRUE, sep = ",")
+data <- read.csv("./2404152328_Cars.csv", header = TRUE, sep = ",")
 is_dataframe(data)
 
 # Remove everything in columns 11 and onwards
@@ -222,43 +224,67 @@ print(table(feed[, "Pris..Y."])) # Pris..Y.
 is_dataframe(feed)
 print(mode(table(feed$Hästkrafter[1])))
 
-# Create a new column called Märke_modell in the data frame feed that combines 
+# Create a new column called Märkell in the data frame feed that combines 
 # the two columns Märke and Modell using an underscore
-feed$Märke_modell <- paste(feed$Märke, feed$Modell, sep = "_")
+feed$Märkell_ <- paste(feed$Märke, feed$Modell, sep = "_")
 
-# Print the unique values in the column Märke_modell
+# Print the unique values in the column Märkell
 is_dataframe(feed)
 print(head(feed))
-print(table(feed$Märke_modell))
+print(table(feed$Märkell))
 
 # Remove the two columns Märke and Modell from feed
 feed <- feed[, !(names(feed) %in% c("Märke", "Modell"))]
 print(head(feed))
-print(table(feed$Märke_modell))
+print(table(feed$Märkell))
 
 # Make a copy of the feed
 is_dataframe(feed)
-write.csv(feed, file = "carfeed_1.csv")
+write.csv(feed, file = "carfeed_cleaned.csv")
 
 # -----------------------------------------------------------
 # ------------Do not change anything above this line---------
 # -----------------------------------------------------------
 
+feed <- read.csv("carfeed_1.csv", header = TRUE, sep = ",")
+is_dataframe(data)
+
 # Create a dummy encoding of 'column' in 'data'
 dummy_encoding <- function(data, column) {
-  dummy_column <- model.matrix(~ column - 1, data = data)
-  data <- cbind(data, dummy_column)
+
+    # Ensure the column is a factor
+  data[[column]] <- as.factor(data[[column]])
+
+  dummy_column <- model.matrix(~ . - 1, data = data[, column, drop = FALSE])
+  colnames(dummy_column) <- paste(column, levels(data[[column]]), sep = "_")
   data <- data[, !(names(data) %in% column)]
-  write.csv(data, file = paste("carfeed_", column, "_dummies.csv", sep = ""))
+  last_col_position <- which(names(data) == "Pris..Y.")
+  data <- cbind(data[, 1:(last_col_position - 1)], dummy_column, data[, last_col_position:ncol(data)])
+  write.csv(data, file = paste("carfeed_", column, "_dummies.csv", sep = ""), row.names = FALSE)
+  
   return(data)
 }
+
+feed <- dummy_encoding(feed, 'Biltyp')
+print(head(feed))
+
+feed <- dummy_encoding(feed, 'Drivning')
+print(head(feed))
 
 feed <- dummy_encoding(feed, 'Färg')
 print(head(feed))
 
+feed <- dummy_encoding(feed, 'Län')
+print(head(feed))
 
+feed <- dummy_encoding(feed, 'Märkell')
+print(head(feed))
 
+print(paste("Size of the feed is now ", deparse(dim(feed))))
 
+# Make a copy of the feed
+is_dataframe(feed)
+write.csv(feed, file = "carfeed_ready.csv")
 
 # --Appendix-------------------------------------------------
 # -----------------------------------------------------------
