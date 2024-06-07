@@ -79,7 +79,7 @@ print(unique_values)
 
 # Save the feed into a new file called "carfeed.csv"
 is_dataframe(feed)
-write.csv(feed, file = "carfeed.csv")
+write.csv(feed, file = "carfeed.csv", row.names = FALSE)
 
 # -----------------------------------------------------------
 # ------------Do not change anything above this line---------
@@ -111,7 +111,7 @@ feed[, 1] <- as.integer(feed[, 1])
 
 # Save the feed into "carfeed.csv"
 is_dataframe(feed)
-write.csv(feed, file = "carfeed.csv")
+write.csv(feed, file = "carfeed.csv", row.names = FALSE)
 
 # --Appendix-------------------------------------------------
 
@@ -183,7 +183,7 @@ print(setdiff(unique(feed$Län), counties))
 
 # Save the feed into a new file called "carfeed.csv"
 is_dataframe(feed)
-write.csv(feed, file = "carfeed.csv")
+write.csv(feed, file = "carfeed.csv", row.names = FALSE)
 
 # -----------------------------------------------------------
 # ------------Do not change anything above this line---------
@@ -226,7 +226,7 @@ print(mode(table(feed$Hästkrafter[1])))
 
 # Create a new column called Märkell in the data frame feed that combines 
 # the two columns Märke and Modell using an underscore
-feed$Märkell_ <- paste(feed$Märke, feed$Modell, sep = "_")
+feed$Märkell <- paste(feed$Märke, feed$Modell, sep = "_")
 
 # Print the unique values in the column Märkell
 is_dataframe(feed)
@@ -240,13 +240,13 @@ print(table(feed$Märkell))
 
 # Make a copy of the feed
 is_dataframe(feed)
-write.csv(feed, file = "carfeed_cleaned.csv")
+write.csv(feed, file = "carfeed_cleaned.csv", row.names = FALSE)
 
 # -----------------------------------------------------------
 # ------------Do not change anything above this line---------
 # -----------------------------------------------------------
 
-feed <- read.csv("carfeed_1.csv", header = TRUE, sep = ",")
+feed <- read.csv("carfeed_cleaned.csv", header = TRUE, sep = ",")
 is_dataframe(data)
 
 # Create a dummy encoding of 'column' in 'data'
@@ -280,11 +280,185 @@ print(head(feed))
 feed <- dummy_encoding(feed, 'Märkell')
 print(head(feed))
 
+# What I learned much later, at about this point, was that if you do not use
+# row.names = FALSE, then there will be an X column that you won't be able to
+# remove by methods like this one:
+# Remove the first column of feed
+# feed <- feed[, -1]
+
+# Set the name of the target to Y for clarity
+colnames(feed)[ncol(feed)] <- "Y"
+print(head(feed))
+
 print(paste("Size of the feed is now ", deparse(dim(feed))))
 
 # Make a copy of the feed
 is_dataframe(feed)
-write.csv(feed, file = "carfeed_ready.csv")
+write.csv(feed, file = "carfeed_ready.csv", row.names = FALSE)
+
+# -----------------------------------------------------------
+# ------------Do not change anything above this line---------
+# -----------------------------------------------------------
+
+# Uncomment only if you'd need to reinstall the packages
+# install.packages("glmnet")
+# install.packages("caret")
+# install.packages("e1071")
+
+library(glmnet)
+library(caret)
+
+# -----------------------------------------------------------
+# --------------------Data Preparation-----------------------
+# -----------------------------------------------------------
+
+# Load the data from 
+feed <- read.csv("carfeed_ready.csv", header = TRUE, sep = ",")
+print(head(feed))
+
+# Split the data into features and target
+X <- feed[, -which(names(feed) == "Y")]
+y <- feed$Y
+
+# Standardize the features
+X_scaled <- scale(X)
+
+# Split into training and test sets
+set.seed(42)
+trainIndex <- createDataPartition(y, p = 0.8, list = FALSE)
+X_train <- X_scaled[trainIndex, ]
+X_test <- X_scaled[-trainIndex, ]
+y_train <- y[trainIndex]
+y_test <- y[-trainIndex]
+
+# -----------------------------------------------------------
+# --------------------Ridge Regression-----------------------
+# -----------------------------------------------------------
+
+ridge_model <- cv.glmnet(X_train, y_train, alpha = 0)
+print(ridge_model$cvm)
+best_lambda_ridge <- ridge_model$lambda.min
+print(best_lambda_ridge)
+
+# Fit the model with the best lambda
+ridge_fit <- glmnet(X_train, y_train, alpha = 0, lambda = best_lambda_ridge)
+
+# Evaluate on the test set
+ridge_pred <- predict(ridge_fit, s = best_lambda_ridge, newx = X_test)
+ridge_rmse <- sqrt(mean((ridge_pred - y_test)^2))
+print(paste("Ridge Regression Test RMSE:", ridge_rmse))
+
+# -----------------------------------------------------------
+# --------------------Lasso Regression-----------------------
+# -----------------------------------------------------------
+
+lasso_model <- cv.glmnet(X_train, y_train, alpha = 1)
+print(lasso_model$cvm)
+best_lambda_lasso <- lasso_model$lambda.min
+print(best_lambda_lasso)
+
+# Fit the model with the best lambda
+lasso_fit <- glmnet(X_train, y_train, alpha = 1, lambda = best_lambda_lasso)
+
+# Evaluate on the test set
+lasso_pred <- predict(lasso_fit, s = best_lambda_lasso, newx = X_test)
+lasso_rmse <- sqrt(mean((lasso_pred - y_test)^2))
+print(paste("Lasso Regression Test RMSE:", lasso_rmse))
+
+# -----------------------------------------------------------
+# -----------------Elastic Net Regression--------------------
+# -----------------------------------------------------------
+
+set.seed(42)
+control <- trainControl(method = "cv", number = 5)
+grid <- expand.grid(alpha = seq(0, 1, length = 10), lambda = 10^seq(-3, 3, length = 100))
+
+elastic_net_model <- train(X_train, y_train,
+                           method = "glmnet",
+                           trControl = control,
+                           tuneGrid = grid)
+
+# Best model parameters
+best_alpha <- elastic_net_model$bestTune$alpha
+best_lambda <- elastic_net_model$bestTune$lambda
+print(paste("Best Alpha:", best_alpha))
+print(paste("Best Lambda:", best_lambda))
+
+# Evaluate on the test set
+elastic_net_pred <- predict(elastic_net_model, X_test)
+elastic_net_rmse <- sqrt(mean((elastic_net_pred - y_test)^2))
+print(paste("Elastic Net Regression Test RMSE:", elastic_net_rmse))
+
+# -----------------------------------------------------------
+# -------------------------Outcome---------------------------
+# -----------------------------------------------------------
+
+# Model coefficients
+
+coef(ridge_fit)
+
+# Predictions on the training set
+train_pred <- predict(ridge_fit, s = best_lambda_ridge, newx = X_train)
+train_rmse <- sqrt(mean((train_pred - y_train)^2))
+print(paste("Ridge Regression Train RMSE:", train_rmse))
+
+# Compare with test RMSE
+print(paste("Ridge Regression Test RMSE:", ridge_rmse))
+
+library(ggplot2)
+
+print(length(y_test))      # Length of actual values
+print(length(ridge_pred))  # Length of predicted values
+ridge_pred <- as.vector(ridge_pred)
+
+# Combine actual and predicted values into a dataframe
+results <- data.frame(Actual = y_test, Predicted = ridge_pred)
+print(head(results))  # Check the first few rows of the dataframe
+
+# Some basic statistics for the sake of comparison
+basic_stats <- summary(feed$Y)
+
+# Extracting the specific statistics from the summary output
+min <- basic_stats[1]
+Q1 <- basic_stats[2]
+med <- basic_stats[3]
+mean <- basic_stats[4]
+Q3 <- basic_stats[5]
+max <- basic_stats[6]
+
+# Plot
+ggplot(results, aes(x = Actual, y = Predicted)) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, color = "red") +
+  labs(title = "Ridge Regression: Actual vs Predicted",
+       x = "Actual Values",
+       y = "Predicted Values") +
+# If we remove this line, the original plot with the outlier will be displayed
+  ylim(c(-1250000, +1250000)) +
+  theme_minimal()
+
+
+# Plot the Actual vs Predicted values
+ggplot(results, aes(x = Actual, y = Predicted)) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, color = "red") +
+  # Adding text annotations for the summary statistics
+  geom_text(x = min, y = min, label = paste("Min"), color = "green") +
+  geom_text(x = 0.95*max, y = max, label = paste("Max"), color = "green") +
+  geom_segment(aes(x = Q1, y = min, xend = Q1, yend = Q3), color = "blue") +
+  geom_segment(aes(x = Q3, y = min, xend = Q3, yend = Q3), color = "blue") +
+  geom_text(x = Q1, y = 0.5*min, label = paste("Q1:", Q1), color = "blue") +
+  geom_text(x = Q3, y = 0.5*min, label = paste("Q3:", Q3), color = "blue") +
+  geom_vline(xintercept = mean, linetype = "dashed", label = paste("Mean:"), color = "orange") +
+  geom_vline(xintercept = med, linetype = "dashed", label = paste("Median:"), color = "orange") +
+  geom_text(aes(x = 1.2*mean, y = min + 4*(max - min)/5), label = paste("Mean:", mean), color = "orange") +
+  geom_text(aes(x = 0.85*med, y = min + (max - min)/20), label = paste("Median:", med), color = "orange") +
+  labs(title = "Ridge Regression: Actual vs Predicted with Summary Statistics",
+       x = "Actual Values",
+       y = "Predicted Values") +
+  # If we remove this line, the original plot with the outlier will be displayed
+  ylim(c(-1250000, +1250000)) +
+  theme_minimal()
 
 # --Appendix-------------------------------------------------
 # -----------------------------------------------------------
@@ -343,7 +517,7 @@ print(head(feed))
 
 # Make a copy of the feed
 is_dataframe(feed)
-write.csv(feed, file = "carfeed_biltyp_dummies.csv")
+write.csv(feed, file = "carfeed_biltyp_dummies.csv", row.names = FALSE)
 
 # -----------------------------------------------------------
 # -----To reset all the variables, except feed and feed1-----
